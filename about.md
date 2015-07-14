@@ -1,19 +1,17 @@
 ---
 layout: page
-title: About Pixyll
+title: About netosober's blog
 permalink: /about/
 ---
 
-This Jekyll theme was crafted with <3 by [John Otander](http://johnotander.com)
-([@4lpine](https://twitter.com/4lpine)).
+![Me](/images/me.jpg)
 
-Checkout the [Github repository](https://github.com/johnotander/pixyll) to download it,
-request a feature, report a bug, or contribute. It's free, and open source
-([MIT](http://opensource.org/licenses/MIT)).
+My name is Ernesto Soberanes, and I was born in Mexico; I've been working in the software industry for more than 12 years, and I have seen technologies come and go.
 
-Thanks to the following:
+Currently I'm a freelancer that works mainly in Full Stack development with technologies like AngularJS, EmberJS, KnockoutJS, ASP.NET, Ruby on Rails, ExpressJS.
 
-* [BASSCSS](http://basscss.com)
-* [Jekyll](http://jekyllrb.com)
-* [Refills](http://refills.bourbon.io/)
-* [Type Scale](http://type-scale.com/)
+I like to travel the world, learn new languages (human and computer), and cook (my favorite hobby).
+
+I created this blog to share my experiences and knowledge; if you want to contact me, I'm available in Twitter, LinkedIn and this site's Contact page.
+
+Cheers!!!

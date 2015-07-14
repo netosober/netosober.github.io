@@ -1,6 +1,6 @@
 # Site settings
 title:       netosober's blog
-email:
+email:       netosober@gmail.com
 author:      John Otander
 description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
 baseurl:     ""
@@ -23,7 +23,7 @@ disqus_shortname:
 github_username: netosober
 stackoverflow_id:
 twitter_username: netosober
-google_plus_id: 
+google_plus_id:
 linkedin_username: netosober
 angellist_username:
 bitcoin_url:
