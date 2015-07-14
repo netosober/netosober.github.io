@@ -12,6 +12,6 @@ Currently I'm a freelancer that works mainly in Full Stack development with tech
 
 I like to travel the world, learn new languages (human and computer), and cook (my favorite hobby).
 
-I created this blog to share my experiences and knowledge; if you want to contact me, I'm available in Twitter, LinkedIn and this site's Contact page.
+I created this blog to share my experiences and knowledge; if you want to contact me, I'm available in Twitter, LinkedIn, GitHub and this site's Contact page.
 
 Cheers!!!
