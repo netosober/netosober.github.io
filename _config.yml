@@ -1,8 +1,8 @@
 # Site settings
 title:       netosober's blog
 email:       netosober@gmail.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+author:      Ernesto Soberanes
+description: "This is my blog about technnical stuff, my hobbies and my experiences"
 baseurl:     ""
 url:         "/"
 
