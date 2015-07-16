@@ -1,20 +1,20 @@
 ---
 layout:     post
 title:      Styling EmberJS with Bootstrap
-date:       2015-07-14 12:00:00
+date:       2015-07-16 12:00:00
 summary:    Let's start a simple EmberJS app
 categories: Bootstrap EmberJS EmberCLI
 ---
 
-Every time I work with EmberJS and start putting together the base structure of the application, I always start looking for guides and tutorials to add a basic styling for it.
+Every time I work with **EmberJS** and start putting together the base structure of the application, I always start looking for guides and tutorials to add a basic styling for it.
 
 I decided to start with Twitter Bootstrap, the most common styling framework out there; however there are many ways to achieve this, and I don't want to write a book about this, so let's follow three different routes to achieve this.
 
 ## Setup the base application
 
-Let's create a simple **EmberJS** application with three routes: index, about and contact. It will not connect to any REST service, it will only showcase some of Bootstrap's features.
+Let's create a simple **EmberJS** application with three routes: index, about and contact. It will not connect to any REST service, the idea is to showcase some of Bootstrap's features.
 
-First we need to get *ember-cli*, as this is the official recommendation by the **EmberJS** team to start an application.
+First we need to get *ember-cli*, as this is the recommendation by the **EmberJS** team to start an application.
 
 {% highlight bash %}
 
@@ -47,6 +47,7 @@ With the app ready, it is time to add our new routes. Let's start with about.
 {% endhighlight %}
 
 The generator creates the following files:
+
 - /app/routes/about.js
 - /app/templates/about.hbs
 - /test/unit/routes/about-test.js
@@ -70,7 +71,7 @@ export default Router;
 
 {% endhighlight %}
 
-For the purpose of this post, we will ignore the generated javascript files, and will focus on the new template. Open up */app/templates/about.hbs* in your favorite editor, replace the {{outlet}} line with the following:
+For the purpose of this post, we will ignore the generated javascript files, and will focus on the new template. Open up */app/templates/about.hbs* in your favorite editor, replace its contents with the following:
 
 {% highlight html %}
 
@@ -132,9 +133,9 @@ Open up */app/templates/contact.hbs* and replace its contents with:
 
 {% endhighlight %}
 
-Wait! What happened with the index route? **EmberJS** already created that route for us when we used *ember-cli* to generate our application. It doesn't generate any files for it, but it is already there; the ember guides site provides more explanation to this: [Routes](http://guides.emberjs.com/v1.12.0/routing/defining-your-routes/).
+Now we have our routes, but wait. What happened with the index route? Turns out **EmberJS** already created that route for us when the application is started, and we see it when we accessed our app the first time.
 
-The only thing that we need to add, is the template for our index route. We could easily add the file directly to the templates folder, but I feel it is more interesting to use the *ember-cli* generator:
+It doesn't generate any files for it, but we need to create a template for the route. We could easily add the file directly to the templates folder, but I feel it is more interesting to use the *ember-cli* generator:
 
 {% highlight bash %}
 
@@ -159,7 +160,7 @@ Edit */app/templates/index.hbs* and replace its contents with:
 
 {% endhighlight %}
 
-Great! We have our three routes with its proper content ready. However, if we got to our browser (make sure you are running *ember serve*), we see two different welcome messages, and no easy way to reach the about and contact routes.
+Great! We have our three routes with its proper content ready. However, if we got to our browser (make sure you are running *ember serve*), we see two different welcome messages, and no way to reach the about and contact routes.
 
 We need to setup a simple navigation bar and remove the original welcome message. To do so, we will edit */app/templates/application.hbs* with the following content:
 
@@ -193,9 +194,11 @@ We need to setup a simple navigation bar and remove the original welcome message
 
 {% endhighlight %}
 
-This will setup a basic navigation that allows to reach the about and contact routes. The styling is quite ugly, but we will setup that in the next section.
+The styling is quite ugly, but we will fix that in the next section.
 
 ![Unstyled EmberJS Welcome page](/images/posts/unstyled-index-page.png)
+
+Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/master).
 
 ## Add Boostrap using a CDN
 
@@ -223,7 +226,7 @@ We got styling in place! However, if you resize the application small enough to 
 
 ![Collapsed Menu mobile page](/images/posts/mobile-index-collapsed-menu.png)
 
-The reason for this is that the Bootstrap javascript reference was incorporated in our head section; we need to move it inside the body section, after the application javascript file (ember-bootstrap.js).
+The reason for this is that the **Bootstrap** javascript reference was incorporated in our head section; we need to move it inside the body section, after the application javascript file (ember-bootstrap.js).
 
 {% highlight html %}
 
@@ -238,11 +241,13 @@ The reason for this is that the Bootstrap javascript reference was incorporated 
 
 Now we have our app fully functional.
 
-![Collapsed Menu mobile page](/images/posts/mobile-index-collapsed-menu.png)
+![Collapsed Menu mobile page](/images/posts/mobile-index-expanded-menu.png)
+
+Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/bootstrap-cdn).
 
 ## Add Bootstrap using bower with simple CSS
 
-Adding Bootstrap with [Bower](http://bower.io/) is much easier. First we need to run the following command to install Bootstrap in our bower dependencies:
+Adding **Bootstrap** with [Bower](http://bower.io/) is very easy. First we need to run the following command to install **Bootstrap** in our bower dependencies:
 
 {% highlight html %}
 
@@ -256,7 +261,7 @@ After that, we need to configure our application to import Bootstrap; this is ac
 - /bower_components/bootstrap/dist/css/bootstrap-theme.css
 - /bower_components/bootstrap/dist/js/bootstrap.js
 
-The lines should be added after the *app* variable is defined.
+The lines should be added after the *app* is defined.
 
 {% highlight javascript %}
 
@@ -276,10 +281,91 @@ module.exports = function(defaults) {
 
 {% endhighlight %}
 
-Let's restart our ember application and then refresh our browser.
+Let's restart our ember application by stoping *ember serve* and starting it again, and then refresh our browser.
 
 ![About page](/images/posts/about-page.png)
 
+When we import assets into our application, they will be available in a couple of generated files: *assets/vendor.js* and *assets/vendor.css*; use your browser's developer tools and inspect the contents of both.
+
+Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/bootstrap-css).
+
 ## Add Boostrap Using bower with SASS
 
-Pending post ...
+Before installing **Bootstrap** with SASS, our application needs to be setup to use SASS. We'll use the following command to add SASS compilation to our app:
+
+{% highlight html %}
+
+% ember install ember-cli-sass
+
+{% endhighlight %}
+
+Ember-cli has large set of add-ons, I recommend taking a look at them [here](http://www.emberaddons.com/).
+
+Now, we can install **Bootstrap** with SASS:
+
+{% highlight html %}
+
+% bower install bootstrap-sass --save
+
+{% endhighlight %}
+
+We need to configure our application like in the previous section. Open up */ember-cli-build.js*, but this time we'll add some options to the app definition and the import for Bootstrap's javascript file:
+
+{% highlight javascript %}
+
+var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+module.exports = function(defaults) {
+  var app = new EmberApp(defaults, {
+      sassOptions: {
+        includePaths: [
+          'bower_components/bootstrap-sass/assets/stylesheets'
+        ]
+      }
+  });
+
+  app.import('bower_components/bootstrap-sass/assets/javascripts/bootstrap.js');
+
+  return app.toTree();
+};
+
+{% endhighlight %}
+
+With the new ember-cli-sass add-on, we need to specify which libraries from bower_components to use. In this case, we are referencing the */bower_components/bootstrap-sass/assets/stylesheets* folder; now we can use **Bootstrap** in our main stylesheet file.
+
+When the application was created, */app/styles/app.css* was generated so that we can add our custom styling; the contents of this stylesheet become *assets/ember-bootstrap.css* when the application is hosted. But, we are currently using SASS for styling, so we need to rename it to app.scss for it to work; after this is done we can edit the file to import Bootstrap:
+
+{% highlight sass %}
+
+@import "bootstrap";
+@import "bootstrap/theme";
+
+{% endhighlight %}
+
+Let's restart our app and refresh our browser.
+
+![Contact page](/images/posts/contact-page.png)
+
+With this approach we can also import independent modules from **Bootstrap**:
+
+{% highlight sass %}
+
+@import "bootstrap/navbar";
+@import "bootstrap/alerts";
+@import "bootstrap/buttons";
+
+{% endhighlight %}
+
+Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/bootstrap-sass).
+
+## Final thoughts
+
+Each approach has its pros and cons; I really like the SASS approach, because it gives me the freedom of selecting the modules that I need.
+
+If you want to learn more about **EmberJS** and **Bootstrap**, I recommend checking out their sites:
+
+- [EmberJS](http://emberjs.io)
+- [Ember-cli](http://ember-cli.io)
+- [Bootstrap](http://getbootstrap.com)
+
+Cheers!!!
