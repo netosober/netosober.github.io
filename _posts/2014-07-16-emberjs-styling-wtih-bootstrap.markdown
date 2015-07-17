@@ -34,7 +34,7 @@ With *ember-cli* installed we can create a new application; we do this with the 
 
 {% endhighlight %}
 
-Open your favorite browser, and go to [localhost:4200](http://localhost:4200/), and you'll see nice welcome message from your new ember applicagtion.
+Open your favorite browser, and go to [localhost:4200](http://localhost:4200/), and you'll see nice welcome message from your new ember application.
 
 ![EmberJS Welcome page](/images/posts/ember-welcome.png)
 
@@ -200,7 +200,7 @@ The styling is quite ugly, but we will fix that in the next section.
 
 Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/master).
 
-## Add Boostrap using a CDN
+## Add Bootstrap using a CDN
 
 With our application foundation ready, we can proceed to add Bootstrap; the quickest way to achieve this is to reference it with CDN. According to [Bootstrap CDN](http://getbootstrap.com/getting-started/#download-cdn) documentation, we only need to add the following:
 
@@ -289,7 +289,7 @@ When we import assets into our application, they will be available in a couple o
 
 Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/bootstrap-css).
 
-## Add Boostrap Using bower with SASS
+## Add Bootstrap Using bower with SASS
 
 Before installing **Bootstrap** with SASS, our application needs to be setup to use SASS. We'll use the following command to add SASS compilation to our app:
 
