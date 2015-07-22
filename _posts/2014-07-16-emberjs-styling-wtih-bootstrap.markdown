@@ -2,7 +2,7 @@
 layout:     post
 title:      Styling EmberJS with Bootstrap
 date:       2015-07-16 12:00:00
-summary:    Let's start a simple EmberJS app
+summary:    Let's start a simple EmberJS app and add basic styling with Twitter Bootstrap. First via a CDN, then with Bower using plain CSS and then with SASS and LESS.
 categories: Bootstrap EmberJS EmberCLI
 ---
 
@@ -249,7 +249,7 @@ Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/
 
 Adding **Bootstrap** with [Bower](http://bower.io/) is very easy. First we need to run the following command to install **Bootstrap** in our bower dependencies:
 
-{% highlight html %}
+{% highlight bash %}
 
 % bower install bootstrap --save
 
@@ -357,6 +357,55 @@ With this approach we can also import independent modules from **Bootstrap**:
 {% endhighlight %}
 
 Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/bootstrap-sass).
+
+## Add Bootstrap using bower with LESS
+
+First we need to run the following commands:
+
+{% highlight bash %}
+
+% ember install ember-cli-less
+% bower install bootstrap --save
+
+{% endhighlight %}
+
+The first command adds the LESS compiler add-on, and the second command adds **Bootstrap** with using Bower. With the LESS add-on available, it is time to include it in */ember-cli-build.js*, along with the import to *bootstrap.js*:
+
+{% highlight javascript %}
+
+var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+
+module.exports = function(defaults) {
+  var app = new EmberApp(defaults, {
+    // Add options here
+    lessOptions: {
+      paths: [
+        'bower_components/bootstrap/less'
+      ]
+    }
+  });
+
+  app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+
+  return app.toTree();
+};
+
+{% endhighlight %}
+
+Now we need to rename */app/styles/app.css* to *app.less* so that the LESS compiler can generate our application style. After that, we need can import **Bootstrap** by editing the *app.less* file with this:
+
+{% highlight sass %}
+
+@import "bootstrap";
+@import "theme";
+
+{% endhighlight %}
+
+Let's restart our app and refresh our browser.
+
+![Styled application page](/images/posts/styled-index-page.png)
+
+Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/bootstrap-less).
 
 ## Final thoughts
 
