@@ -369,7 +369,7 @@ First we need to run the following commands:
 
 {% endhighlight %}
 
-The first command adds the LESS compiler add-on, and the second command adds **Bootstrap** with using Bower. With the LESS add-on available, it is time to include it in */ember-cli-build.js*, along with the import to *bootstrap.js*:
+The first command adds the LESS compiler add-on, and the second adds **Bootstrap** with Bower. With the LESS add-on available, it is time to include **Bootstrap** in */ember-cli-build.js*, along with the import to *bootstrap.js*:
 
 {% highlight javascript %}
 
@@ -409,7 +409,7 @@ Code is available in [GitHub](https://github.com/netosober/ember-bootstrap/tree/
 
 ## Final thoughts
 
-Each approach has its pros and cons; I really like the SASS approach, because it gives me the freedom of selecting the modules that I need.
+Each approach has its pros and cons; I really like the SASS/LESS approach, because it gives me the freedom of selecting the modules that I need.
 
 If you want to learn more about **EmberJS** and **Bootstrap**, I recommend checking out their sites:
 
