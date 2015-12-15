@@ -165,7 +165,7 @@ Great! We have our three routes with its proper content ready. However, if we go
 We need to setup a simple navigation bar and remove the original welcome message. To do so, we will edit */app/templates/application.hbs* with the following content:
 
 {% highlight html %}
-
+{% raw %}
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -176,13 +176,13 @@ We need to setup a simple navigation bar and remove the original welcome message
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {{link-to 'Home' 'index' class="navbar-brand" }}
+      {{ link-to 'Home' 'index' class="navbar-brand" }}
     </div>
 
     <div class="collapse navbar-collapse" id="menu-collapse">
       <ul class="nav navbar-nav">
-        <li>{{link-to 'About' 'about'}}</li>
-        <li>{{link-to 'Contact' 'contact'}}</li>
+        <li>{{ link-to 'About' 'about' }}</li>
+        <li>{{ link-to 'Contact' 'contact' }}</li>
       </ul>
     </div>
   </div>
@@ -192,6 +192,7 @@ We need to setup a simple navigation bar and remove the original welcome message
   {{outlet}}
 </div>
 
+  {% endraw %}
 {% endhighlight %}
 
 The styling is quite ugly, but we will fix that in the next section.
