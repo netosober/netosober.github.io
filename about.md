@@ -14,4 +14,4 @@ I like to travel the world, learn new languages, drink coffee and cook (my favor
 
 I created this blog to share my experiences and knowledge; if you want to contact me, I'm available in Twitter, LinkedIn, GitHub and this site's Contact page.
 
-Cheers!!!
+Saludos!!!
