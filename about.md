@@ -6,9 +6,9 @@ permalink: /about/
 
 ![Me](/images/me.jpg)
 
-My name is Ernesto Soberanes, and I was born in Mexico; I've been working in the software industry for more than 12 years, and I have seen technologies come and go.
+My name is Ernesto Soberanes, and I am from Mexico; I've been working in the software industry for more than 13 years, working on a lot of different technologies.
 
-Currently I'm a freelancer that works mainly in Full Stack development with technologies like AngularJS, EmberJS, KnockoutJS, ASP.NET, Ruby on Rails, ExpressJS.
+Currently I'm a freelancer that works mainly in Full Stack development with technologies like ReactJS, AngularJS, EmberJS, KnockoutJS, ASP.NET, Ruby on Rails, ExpressJS.
 
 I like to travel the world, learn new languages (human and computer), and cook (my favorite hobby).
 
